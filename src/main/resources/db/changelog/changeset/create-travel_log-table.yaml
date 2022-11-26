@@ -1,0 +1,47 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-travel_log_table
+      author: atoy
+      comment: create a single table for travel_log_db
+      changes:
+        - createTable:
+            tableName: travel_log
+            columns:
+              - column:
+                  name: id
+                  type: serial
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: vehicle_reg_num
+                  type: varchar(10)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: vehicle_owner
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: odometer_value_at_start
+                  type: int4
+                  constraints:
+                    nullable: false
+              - column:
+                  name: odometer_value_at_finish
+                  type: int4
+                  constraints:
+                    nullable: false
+              - column:
+                  name: route
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: short_description
+                  type: varchar
+              - column:
+                  name: log_time
+                  type: timestamp
+                  constraints:
+                    nullable: false

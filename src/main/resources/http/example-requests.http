@@ -1,0 +1,57 @@
+### Create new log request
+POST http://localhost:1234/travel/log/add
+Content-Type: application/json
+
+{
+  "vehicleRegNum": "10A102BC",
+  "vehicleOwner": "Saidali Ortukov",
+  "odometerValueAtStart": 5000,
+  "odometerValueAtFinish": 5200,
+  "route": "Angren-Tashkent",
+  "shortDescription": "Go to a office",
+  "log_time": "2022-03-20"
+}
+
+
+
+### Find and get log by id request
+GET http://localhost:1234/travel/log/get/5
+
+
+
+### Update existing log request
+PUT http://localhost:1234/travel/log/edit
+Content-Type: application/json
+
+{
+  "id": 6,
+  "vehicleRegNum": "10A102BA",
+  "vehicleOwner": "Saidali Ortukov",
+  "odometerValueAtStart": 5000,
+  "odometerValueAtFinish": 5200,
+  "route": "Angren-Tashkent",
+  "shortDescription": "Go to a office"
+}
+
+
+
+### Remove log by id request
+DELETE http://localhost:1234/travel/log/remove/6
+
+
+
+### Create report by filters request
+POST http://localhost:1234/travel/log/report
+Content-Type: application/json
+
+{
+  "startDate": "2022-10-01",
+  "endDate": "2022-10-09",
+  "vehicleRegNum": "01A111AA",
+  "vehicleOwner": "Ortukov S A"
+}
+
+
+
+### Create report without filters request
+POST http://localhost:1234/travel/log/report

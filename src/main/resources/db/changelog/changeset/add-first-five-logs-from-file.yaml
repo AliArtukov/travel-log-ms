@@ -1,0 +1,12 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-users-from-file
+      author: atoy
+      comment: add first five logs for starting service
+      changes:
+        - sqlFile:
+            dbms: 'all'
+            endDelimiter: \nGO
+            splitStatements: true
+            stripComments: true
+            path: db/changelog/changeset/sql/insert-first-five-logs.sql
